@@ -1,1 +1,172 @@
-transform property takes one or more CSS transform functions as its values.
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="animation-transforms.css">
+    <title>Transforms</title>
+
+</head>
+
+<body>
+
+    <!-- The transform property takes in one or more CSS transform functions as its
+    values, with those functions taking in their own value, usually an angle or a number. -->
+
+    <h2>Transformation function:</h2>
+
+    <article>
+        <h3>Rotate</h3>
+        <p>Original</p>
+        <img src="https://www.theodinproject.com/mstile-70x70.png" alt="top logo" />
+        <p>Rotate by 45 degrees</p>
+        <img class="rotate-by-deg" src="https://www.theodinproject.com/mstile-70x70.png" alt="top logo" />
+        <p>Rotate by -1 radian</p>
+        <img class="rotate-by-rad" src="https://www.theodinproject.com/mstile-70x70.png" alt="top logo" />
+        <p>Rotate 0.3 turn</p>
+        <img class="rotate-by-turn" src="https://www.theodinproject.com/mstile-70x70.png" alt="top logo" />
+    </article>
+
+    <article>
+        <h3>Scale</h3>
+        <p>Original</p>
+        <img src="https://www.theodinproject.com/mstile-70x70.png" alt="top logo" />
+
+        <p>0.25 scale on X dimension</p>
+        <img class="scaleX" src="https://www.theodinproject.com/mstile-70x70.png" alt="top logo" />
+        <p>1.5 scale on Y dimension</p>
+        <img class="scaleY" src="https://www.theodinproject.com/mstile-70x70.png" alt="top logo" />
+
+        <p>Scale by 0.25 and 1.5 on X and Y dimension respectively</p>
+        <img class="scaleXY" src="https://www.theodinproject.com/mstile-70x70.png" alt="top logo" />
+
+        <p>0.5 scale on both dimensions</p>
+        <img class="scale" src="https://www.theodinproject.com/mstile-70x70.png" alt="top logo" />
+    </article>
+
+
+    <article>
+        <h3>Skew</h3>
+        <p>Original</p>
+        <div></div>
+        <p>Skew 45 degrees on X-axis</p>
+        <div class="skewX"></div>
+        <p>Skew -0.5 radian on Y-axis</p>
+        <div class="skewY"></div>
+        <p>Skew 45 degrees and -0.5 radian on X and Y axes respectively</p>
+        <div class="skewXY"></div>
+        <p>Skew 45 degrees on X-axis (single value in function)</p>
+        <div class="skew"></div>
+    </article>
+
+    <article class="translate">
+        <h3>Translate</h3>
+        <p>Original</p>
+        <div>
+            <img src="https://www.theodinproject.com/mstile-70x70.png" alt="top logo" />
+        </div>
+
+        <p>Translate by 20px on X-axis</p>
+        <div>
+            <img class="translateX" src="https://www.theodinproject.com/mstile-70x70.png" alt="top logo" />
+        </div>
+
+        <p>Translate by -33% on Y-axis</p>
+        <div>
+            <img class="translateY" src="https://www.theodinproject.com/mstile-70x70.png" alt="top logo" />
+        </div>
+
+        <p>Translate by 20px and -33% on X and Y axes respectively</p>
+        <div>
+            <img class="translateXY" src="https://www.theodinproject.com/mstile-70x70.png" alt="top logo" />
+        </div>
+
+        <p>Translate by 20px on X-axis (single value in function)</p>
+        <div>
+            <img class="translate" src="https://www.theodinproject.com/mstile-70x70.png" alt="top logo" />
+        </div>
+    </article>
+
+
+    <h2>Chaining multiple transforms:</h2>
+
+    <!-- <article>                                   hidden for easier reading
+        <div class="red-box"></div>
+        <div class="blue-box"></div>  
+    </article> -->
+
+
+    <h2>Three-dimensional transforms</h2>
+
+
+
+    <article>
+        <h3>Perspective</h3>
+        Perspective is the transform function value to set the distance from the
+        user to the z = 0 plane.
+
+        <style>
+            .element {
+                transform: perspective();
+            }
+        </style>
+
+        Essentially, by setting a perspective value, we are telling the object
+        render as if we wereviiewing it from a specific distance on the z-axis.
+    </article>
+
+    <article>
+        <h3>Rotate specific axis</h3>
+        <!-- x, y, z axis directions -->
+
+        <p>Original</p>
+        <img src="https://www.theodinproject.com/mstile-70x70.png" alt="top logo" />
+
+        <p>Rotate X</p>
+        <img class="rotateX" src="https://www.theodinproject.com/mstile-70x70.png" alt="top logo" />
+
+        <p>Rotate Y</p>
+        <img class="rotateY" src="https://www.theodinproject.com/mstile-70x70.png" alt="top logo" />
+
+        <p>Rotate Z</p>
+        <img class="rotateZ" src="https://www.theodinproject.com/mstile-70x70.png" alt="top logo" />
+    </article>
+
+    <article>
+        <h3>Scale specific axes</h3>
+        <style>
+            .element {
+                transform: scaleZ();
+                transform: scale3d();
+            }
+        </style>
+
+        scaleZ() is used to scale only along the Z (depth) axis; <br>
+        scale3d() is able to independently scale along x, y and z axes
+    </article>
+
+    <article>
+        <h3>Translate specific axis</h3>
+        translateZ doesn't do much without perspective. Instead, perspective and
+        translateZ work together to create the illusion of 3-dimensional distance
+        from the rendered object
+
+        <p>Original</p>
+        <img src="https://www.theodinproject.com/mstile-144x144.png" alt="top logo" />
+
+        <p>TranslateZ 30px</p>
+        <img class="translate30" src="https://www.theodinproject.com/mstile-144x144.png" alt="top logo" />
+
+        <p>TranslateZ -100px</p>
+        <img class="translate-100" src="https://www.theodinproject.com/mstile-144x144.png" alt="top logo" />
+
+        <p>TranslateZ -200px</p>
+        <img class="translate-200" src="https://www.theodinproject.com/mstile-144x144.png" alt="top logo" />
+
+
+    </article>
+
+</body>
+
+</html>
