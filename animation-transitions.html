@@ -10,6 +10,37 @@
 
 <body>
 
+    <h2>Transitions</h2>
+
+    Transitions let us animate a chnage from an elemetns initial state to an end state.
+
+
+    <!-- Button example  -->
+
+    <div id="transition-container">
+        <button>Transition!</button>
+        <p>Hover your mouse over the rectangle above!
+    </div>
+
+    Transitiion is shorthand for transition-property, transition-duration,
+    transition-timing-function and transition-delay.
+
+    <style>
+        /* button {
+            other CSS properties:
+        /* transition-property: background-color; - what property will be transitioned  */
+        /* transition-duration: 1s; - time whitin event will occur */
+        /* transition-timing-function: ease-out; - changing speed of transition (type) */
+        /* transition-delay: 0.25s; - delay at which transition will start } */
+    </style>
+
+
+    <h2>Performance</h2>
+
+    1. Be aware of "stacking content", which isstacking elements on z-axis (depth).
+    2. For best performance keep animations to only affecting opacity and transform.
+
+
 </body>
 
 </html>
