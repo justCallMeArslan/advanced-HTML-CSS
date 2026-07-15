@@ -51,7 +51,17 @@
 
     <div class="box duration-3">4 seconds</div>
 
-    <button id="change">Change</button>
+    <button id="change">Change</button> <br>
+
+
+
+
+    Box combining transitions for: width, height, background-color, rotate.
+    <div class="box1">I'mma YELLOW box</div><br><br>
+
+
+    <p>Click anywhere to move the ball</p>
+    <div id="foo" class="ball"></div> <br>
 
     <script>
         function change() {
@@ -63,7 +73,28 @@
 
         const changeButton = document.querySelector("#change");
         changeButton.addEventListener("click", change);
+
+
+        // Make the ball move to a certain position:
+        const f = document.getElementById("foo");
+        document.addEventListener("click", (ev) => {
+            f.style.transform = `translateY(${ev.clientY - 25}px)`; // clientY is 
+            // Y axis and - 25 we need to center ball at cursor pointer (ball size 50/50)
+            f.style.transform += `translateX(${ev.clientX - 25}px)`; // clientX is X axis
+        });
+
     </script>
+
+    <h2>Helpfult tips</h2>
+
+    will-change is a property that allows us to hint to the browser that we're
+    going to animate the selected element, and that it should optimize for this case. <br>
+
+    transition-delay allows us to keep things status-quo for a brief interval. 
+    In this case, when the user moves their mouse outside .dropdown-wrapper, 
+    nothing happens for 300ms. If their mouse re-enters the element within that 
+    300ms window, the transition never takes place. <br>
+
 
 </body>
 
