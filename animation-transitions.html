@@ -37,11 +37,33 @@
 
     <h2>Performance</h2>
 
-    1. Be aware of "stacking content", which isstacking elements on z-axis (depth).
-    2. For best performance keep animations to only affecting opacity and transform.
+    1. Be aware of "stacking content", which isstacking elements on z-axis (depth). <br>
+    2. For best performance keep animations to only affecting opacity and transform. <br>
 
 
     <!-- Assignment part -->
+
+    Example of transition duration (MDN):
+
+    <div class="box duration-1">0.5 seconds</div>
+
+    <div class="box duration-2">2 seconds</div>
+
+    <div class="box duration-3">4 seconds</div>
+
+    <button id="change">Change</button>
+
+    <script>
+        function change() {
+            const elements = document.querySelectorAll("div.box");
+            for (const element of elements) {
+                element.classList.toggle("transformed-state");
+            }
+        }
+
+        const changeButton = document.querySelector("#change");
+        changeButton.addEventListener("click", change);
+    </script>
 
 </body>
 
