@@ -28,7 +28,65 @@
 
     <!-- assignment part  -->
 
-    
+    <style>
+        @keyframes breath {
+            0% {
+                transform: scale(1) rotateZ(0deg);
+            }
+
+            50% {
+                background-color: blue;
+            }
+
+            100% {
+                transform: scale(2) rotateZ(360deg);
+                background-color: green;
+            }
+        }
+
+        @keyframes fade {
+            0% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 0.5;
+                transform: scale(2);
+            }
+
+            100% {
+                opacity: 0;
+                transform: scale(2);
+            }
+        }
+
+        .box {
+            /* animation: breath 2500ms;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: infinite;
+            animation-direction: alternate; */
+
+            animation: breath 2500ms ease-in-out infinite alternate;
+            /*  shorthand attributes can be used in any order, and because of that 
+            its better to keep them apart from shorthand as it will may cause troubles 
+            if mixed with duration */
+            animation-delay: 1000ms;
+        }
+
+
+        .box2 {
+            animation: fade 2500ms;
+            /* animation-fill-mode lets us persist the final value from the animation */
+            animation-fill-mode: forwards;
+
+            /* animation-fill-mode: backwards does the same thing as forwards , 
+            but vice-versa, it hides unwanted elements andd later shows them as intended */
+        }
+    </style>
+
+    <div class="box"></div>
+    <div class="box2">What's up?</div>
 
 </body>
 

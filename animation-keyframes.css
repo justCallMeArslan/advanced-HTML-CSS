@@ -1,3 +1,10 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
 .container {
     height: 20vh;
     width: 100vw;
@@ -70,4 +77,20 @@
     to {
         background-color: green;
     }
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    background: red;
+    margin-top: 150px;
+}
+
+.box2 {
+    width: 100px;
+    height: 100px;
+    background: purple;
+    margin-top: 150px;
+    color: white;
+    text-align: center;
 }
