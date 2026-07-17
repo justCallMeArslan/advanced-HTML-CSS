@@ -5,6 +5,8 @@ body {
     flex-direction: column;
 }
 
+/* example 1 */
+
 .container {
     height: 20vh;
     width: 100vw;
@@ -103,6 +105,7 @@ body {
     flex-direction: row;
     gap: 15px;
 }
+
 .box2 {
     width: 75px;
     height: 75px;
