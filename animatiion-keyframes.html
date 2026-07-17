@@ -27,6 +27,13 @@
 
 
     <!-- assignment part  -->
+    <div class="box"></div>
+    <div class="box1">I'm fading away!!!</div>
+    <div class="bounce">
+        <div class="box2 one"></div>
+        <div class="box2 two "></div>
+        <div class="box2 three"></div>
+    </div>
 
     <style>
         @keyframes breath {
@@ -75,7 +82,7 @@
         }
 
 
-        .box2 {
+        .box1 {
             animation: fade 2500ms;
             /* animation-fill-mode lets us persist the final value from the animation */
             animation-fill-mode: forwards;
@@ -85,8 +92,40 @@
         }
     </style>
 
-    <div class="box"></div>
-    <div class="box2">What's up?</div>
+    <!-- dynamic animations -->
+
+    <style>
+        @keyframes bounce {
+            0% {
+                transform: translateY(0px);
+            }
+
+            100% {
+                transform: translateY(var(--bounce-offset));
+                background-color: black
+            }
+        }
+
+        .box2 {
+            animation: bounce alternate infinite cubic-bezier(0.2, .65, .6, 1);
+            /* cubic-bezier is the custom animation-timing-function */
+        }
+
+        .box2.one {
+            --bounce-offset: -30px;
+            animation-duration: 300ms;
+        }
+
+        .box2.two {
+            --bounce-offset: -20px;
+            animation-duration: 200ms;
+        }
+
+        .box2.three {
+            --bounce-offset: -40px;
+            animation-duration: 400ms;
+        }
+    </style>
 
 </body>
 
